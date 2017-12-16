@@ -1,0 +1,17 @@
+my_file = open("some.txt", "w")
+my_file.write("Класна погода зараз!\nЗима і без снігу!")
+my_file.close()
+my_file = open("some.txt")
+my_string = my_file.read()
+my_file2 = open("time.txt","w")
+my_file2.write("1234\n") # доказ того що виводить результат файла2 
+
+my_file2.write(my_string)
+my_file2.close()
+my_file.close()
+my_file2 = open("time.txt")
+my_string2 = my_file2.read()
+print(my_string2) # вивід результату файла без зміни порядку слів
+print(*reversed(my_string2.split())) # вивід файла із зміною порядку слів
+print(my_string2[::-1]) # вивід файла де слова задом наперед
+my_file2.close()
